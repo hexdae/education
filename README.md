@@ -7,7 +7,7 @@ The following modules are present:
 
 `import cashflow`
 
-`cashflow.diagram (time, value, cashflow, 'g', 'k', '$', 'diagram.png', [12,9])`
+`cashflow.diagram (time, value, cashflow, 'g', 'k', '$', 'diagram.png', [12,9], bar = False)`
 
 Parameter | Explanation | example
 ----------- | ------------------- |--------------------------
@@ -21,3 +21,4 @@ Parameter | Explanation | example
 |`baspect` 	| aspect ratio array	| `[12, 9], [4, 3]` |
 |`int_x`		| integer x axis			| `'True', 'False'`|
 |`show`			| show plot 					| `'True', 'False'`|
+|`bar`			| bar graph or plot 	| `'True', 'False'`|
