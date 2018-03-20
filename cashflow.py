@@ -1,7 +1,6 @@
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MaxNLocator
 
-
 # Cashflow diagram plotter, usage:
 # t 		: time array			example: [2000, 2001, 2002]
 # value 	: value array			example: [20, 24, 23]
@@ -10,10 +9,11 @@ from matplotlib.ticker import MaxNLocator
 # c2		: cashflow color 	 	example: 'r', 'g', 'b', '#FF0099'
 # currency	: currency label		example: '$', 'NT$', 'HK$'
 # path		: output file			example: '../folder/image.png'	
-# aspect 	: aspect ration			example: '[12, 9]'
-
+# aspect 	: aspect ratio array	example: [12, 9], [4, 3] 
+# int_x		: integer x axis		example: 'True', 'False'
+# show		: show plot 			example: 'True', 'False'
  
-def diagram (t, value, cashflow, c1="k", c2="k", currency="$", path = "test.png", aspect = [12,6], int_x = True, show = False):
+def diagram (t, value, cashflow, c1="k", c2="k", currency="$", path = "test.png", aspect = [12,6], int_x = True, bar = True, show = False):
 
 	fig, ax1 = plt.subplots(figsize=(aspect))
 
@@ -22,7 +22,10 @@ def diagram (t, value, cashflow, c1="k", c2="k", currency="$", path = "test.png"
 		ax1.xaxis.set_major_locator(MaxNLocator(integer=True))
 
 	# Plot value (left axis) with color c1
-	ax1.plot(t, value, color = c1)
+	if (bar):
+		ax1.bar(t, value, color = c1,  alpha= 0.3)
+	else:
+		ax1.plot(t, value, color = c1,  alpha= 0.3)
 	ax1.set_xlabel('time (year)')
 
 	# Set value label and currency
@@ -36,7 +39,7 @@ def diagram (t, value, cashflow, c1="k", c2="k", currency="$", path = "test.png"
 	pos = [i for i in range(len(cashflow)) if cashflow[i] > 0]
 	neg = [i for i in range(len(cashflow)) if cashflow[i] < 0]
 	
-	# Plot cashflow (rught axis) in the correct direction with color c2
+	# Plot cashflow (right axis) in the correct direction with color c2
 	if (len(pos)):
 		markerline, stemlines, baseline = ax2.stem(t[pos], cashflow[pos], markerfmt='^', basefmt=" ")
 		plt.setp(stemlines, 'color', c2)
