@@ -12,6 +12,7 @@ from matplotlib.ticker import MaxNLocator
 # aspect 	: aspect ratio array	example: [12, 9], [4, 3] 
 # int_x		: integer x axis		example: 'True', 'False'
 # show		: show plot 			example: 'True', 'False'
+# bar		: use bar graph 		example: 'True', 'False'
  
 def diagram (t, value, cashflow, c1="k", c2="k", currency="$", path = "test.png", aspect = [12,6], int_x = True, bar = True, show = False):
 
