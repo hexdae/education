@@ -50,5 +50,5 @@ cashflow = np.concatenate([cashflow_s, cashflow_p], axis = 0)
 # Generate cashflow diagrams
 cf.diagram (t_s, value_s, cashflow_s,"#00DD99",'k', "HK$", "savings.png")
 cf.diagram (t_p, value_p, cashflow_p,"#FF0044",'k', "HK$", "pension.png")
-cf.diagram (time, value, cashflow,'#0077DD','k', "HK$", "total")
+cf.diagram (time, value, cashflow,'#0077DD','k', "HK$", "total.png")
 
