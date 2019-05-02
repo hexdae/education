@@ -14,3 +14,5 @@ A simple cashflow diagram plotter, takes arrays an input and saves the plot as a
 ### Python grep:
 
 A python based implementation of the Unix utility grep, with suport for pattern and regular expression matching.
+
+`python grep.py -f [FILENAME] -p "[PATTERN]"`
