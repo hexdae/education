@@ -10,3 +10,7 @@ A simple cashflow diagram plotter, takes arrays an input and saves the plot as a
 `import cashflow`
 
 `cashflow.diagram (time, value, cashflow, 'g', 'k', '$', 'diagram.png', [12,9], bar = False)`
+
+### Python grep:
+
+A python based implementation of the Unix utility grep, with suport for pattern and regular expression matching.
